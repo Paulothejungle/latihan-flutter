@@ -1,59 +1,37 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // runApp(MaterialApp(
-  //   title: 'flutter latihan',
-  //   debugShowMaterialGrid: false,
-  //   debugShowCheckedModeBanner: false,
-  //   home: Scaffold(
-  //     body: Center(child: Text("Hello World",
-  //     style: TextStyle(
-  //       fontSize: 24,
-  //       color: Colors.red
-  //     ))
-  //     ),
-  //   ),
-  //   ),
-  // );
-  runApp(MyWidget());
+  runApp(const MyApp());
 }
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-    title: 'flutter latihan',
-    debugShowMaterialGrid: false,
-    debugShowCheckedModeBanner: false,
-    home: const Myhome()
-    );
-  }
-
-}
-class Myhome extends StatelessWidget {
-  const Myhome({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: const MyScaffold()
+    return const MaterialApp(
+      title: 'Flutter Latihan',
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
     );
   }
 }
 
-class MyScaffold extends StatelessWidget {
-  const MyScaffold({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Hello World",
-      style: TextStyle(
-        fontSize: 24,
-        color: Colors.red
-      ))
+    return const Scaffold(
+      body: Center(
+        child: Text(
+          'Hello World',
+          style: TextStyle(
+            fontSize: 24,
+            color: Colors.red,
+          ),
+        ),
+      ),
     );
   }
 }
-
