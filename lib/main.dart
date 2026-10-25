@@ -9,28 +9,41 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Latihan',
+    return MaterialApp(
+      title: 'Rival Hermawan',
+
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red,
+        ),
+        useMaterial3: true,
+      ),
+
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.purple,
+          brightness: Brightness.dark
+        )
+      ),
+
+      home: const ProfilePage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Hello World',
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.red,
-          ),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Profil Mahasiswa'),
+      ),
+      body: const Center(
+        child: Text('Halaman Profil'),
       ),
     );
   }
